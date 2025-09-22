@@ -1,6 +1,6 @@
-name = "MOD_TITLE"
+name = "Dart's Utilities for Mission Building"
 author = "DartRuffian"
-prefix = "MOD_PREFIX"
+prefix = "dumb"
 mainprefix = "z"
 
 [version]
@@ -11,8 +11,8 @@ git_hash = 0
 include = [
     "mod.cpp",
     "meta.cpp",
-    "logo_MOD_PREFIX.png",
-    "logo_MOD_PREFIX_ca.paa",
+    "logo_dumb.png",
+    "logo_dumb_ca.paa",
     "LICENSE.md",
     "README.md",
 ]

@@ -1,4 +1,4 @@
-MOD_PREFIX_main
+dumb_main
 ===================
 
-Main Addon for MOD_TITLE
+Main Addon for Dart's Utilities for Mission Building

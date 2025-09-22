@@ -1,5 +1,5 @@
-#define COMPONENT common
-#define COMPONENT_BEAUTIFIED Common
+#define COMPONENT zeus
+#define COMPONENT_BEAUTIFIED Zeus
 #include "\z\dumb\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL

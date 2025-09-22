@@ -1,6 +1,6 @@
 #define MAINPREFIX z
-#define PREFIX MOD_PREFIX
-#define MOD_NAME MOD_TITLE
+#define PREFIX dumb
+#define MOD_NAME Dart's Utilities for Mission Building
 #define AUTHOR "DartRuffian"
 
 #define REQUIRED_VERSION 2.18

@@ -1,8 +1,8 @@
 author = "DartRuffian";
-name = "MOD_TITLE";
-description = "MOD_TITLE - Version 0.0.0";
+name = "Dart's Utilities for Mission Building";
+description = "Dart's Utilities for Mission Building - Version 0.0.0";
 overview = "";
-overviewPicture = "logo_MOD_PREFIX_ca.paa";
-picture = "logo_MOD_PREFIX.png";
-logo = "logo_MOD_PREFIX_ca.paa";
-logoOver = "logo_MOD_PREFIX_ca.paa";
+overviewPicture = "logo_dumb_ca.paa";
+picture = "logo_dumb.png";
+logo = "logo_dumb_ca.paa";
+logoOver = "logo_dumb_ca.paa";

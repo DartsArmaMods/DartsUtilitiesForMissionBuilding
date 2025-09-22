@@ -1,4 +1,4 @@
-#include "\z\MOD_PREFIX\addons\main\data\hpp\defineDIKCodes.hpp"
+#include "\z\dumb\addons\main\data\hpp\defineDIKCodes.hpp"
 
 [
     _category, QGVAR(key_doTheThing),
