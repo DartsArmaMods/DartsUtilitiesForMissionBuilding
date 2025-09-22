@@ -8,12 +8,19 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "dumb_main"
+            "dumb_main",
+            "ace_zeus"
         };
-        units[] = {};
+        units[] = {
+            QGVAR(moduleCinemaBorder)
+        };
         weapons[] = {};
         VERSION_CONFIG;
     };
 };
 
+#include "CfgVehicles.hpp"
+#include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
+#include "ui\controls.hpp"
+#include "ui\RscAttributes.hpp"
