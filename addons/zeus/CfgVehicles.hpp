@@ -13,7 +13,7 @@ class CfgVehicles {
     class GVAR(moduleCinemaBorder): GVAR(moduleBase) {
         scope = 1;
         author = AUTHOR;
-        displayName = "Create Cinema Border";
+        displayName = CSTRING(cinemaBorder_name);
         curatorInfoType = QGVAR(RscCinemaBorder);
     };
 };

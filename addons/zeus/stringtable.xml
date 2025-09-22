@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="DUMB">
     <Package name="Zeus">
+        <Key ID="STR_dumb_zeus_AttributeDuration_name">
+            <English>Duration</English>
+        </Key>
+        <Key ID="STR_dumb_zeus_AttributeDuration_tooltip">
+            <English>Duration in seconds</English>
+        </Key>
+        <Key ID="STR_dumb_zeus_AttributeTitle_name">
+            <English>Title</English>
+        </Key>
+        <Key ID="STR_dumb_zeus_cinemaBorder_AttributeTitle_tooltip">
+            <English>Text displayed over the letterbox effecet</English>
+        </Key>
+        <Key ID="STR_dumb_zeus_cinemaBorder_name">
+            <English>Create Cinema Border</English>
+        </Key>
         <Key ID="STR_dumb_zeus_displayName">
             <English>Zeus</English>
+        </Key>
+        <Key ID="STR_dumb_zeus_invalidValue">
+            <English>Invalid value</English>
+        </Key>
+        <Key ID="STR_dumb_zeus_modulesCategory">
+            <English>DUMB Modules</English>
         </Key>
     </Package>
 </Project>

@@ -32,7 +32,7 @@ private _fnc_onKeyUp = {
 
     // Handle invalid input
     if (_duration <= 0) then {
-        _edit ctrlSetTooltip "Invalid Duration";
+        _edit ctrlSetTooltip LLSTRING(invalidValue);
         _edit ctrlSetTextColor [1, 0, 0, 1];
     } else {
         _edit ctrlSetTooltip "";

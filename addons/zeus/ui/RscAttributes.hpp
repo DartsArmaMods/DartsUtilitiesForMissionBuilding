@@ -45,7 +45,7 @@ class GVAR(AttributeTitle): GVAR(AttributeEdit) {
     class controls: controls {
         class Label: Label {
             idc = -1;
-            text = "Title";
+            text = CSTRING(AttributeTitle_name);
             onSetFocus = QUOTE(call FUNC(ui_attributeTitle));
         };
         class Edit: Edit {
@@ -64,8 +64,8 @@ class GVAR(AttributeDuration): RscControlsGroupNoScrollbars {
     class controls {
         class Label: RscText {
             idc = -1;
-            text = "Duration";
-            tooltip = "Duration in seconds";
+            text = CSTRING(AttributeDuration_name);
+            tooltip = CSTRING(AttributeDuration_tooltip);
             x = 0;
             y = QUOTE(H_PART(0.1));
             w = QUOTE(W_PART(10));
@@ -92,7 +92,7 @@ class GVAR(RscCinemaBorder): RscDisplayAttributes {
         class Content: Content {
             class Controls {
                 class title: GVAR(AttributeTitle) {
-                    tooltip = "Title displayed over letterbox (borders)";
+                    tooltip = CSTRING(cinemaBorder_attribute_title_tooltip);
                 };
                 class duration: GVAR(AttributeDuration) {};
             };
