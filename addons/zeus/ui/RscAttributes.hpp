@@ -92,7 +92,7 @@ class GVAR(RscCinemaBorder): RscDisplayAttributes {
         class Content: Content {
             class Controls {
                 class title: GVAR(AttributeTitle) {
-                    tooltip = CSTRING(cinemaBorder_attribute_title_tooltip);
+                    tooltip = CSTRING(cinemaBorder_AttributeTitle_tooltip);
                 };
                 class duration: GVAR(AttributeDuration) {};
             };
