@@ -49,7 +49,7 @@ class CfgVehicles {
                 displayName = CSTRING(AttributeGlobal_name);
                 tooltip = CSTRING(cinemaBorder_AttributeGlobal_tooltip);
                 property = QGVAR(global);
-                defaultValue = "false";
+                defaultValue = "true";
             };
 
             class ModuleDescription: ModuleDescription {}; // Module description should be shown last
