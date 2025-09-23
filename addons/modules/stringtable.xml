@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="DUMB">
-    <Package name="Zeus">
-        <Key ID="STR_dumb_zeus_AttributeDuration_name">
+    <Package name="Modules">
+        <Key ID="STR_dumb_modules_AttributeDuration_name">
             <English>Duration</English>
         </Key>
-        <Key ID="STR_dumb_zeus_AttributeDuration_tooltip">
+        <Key ID="STR_dumb_modules_AttributeDuration_tooltip">
             <English>Duration in seconds</English>
         </Key>
-        <Key ID="STR_dumb_zeus_AttributeGlobal_name">
+        <Key ID="STR_dumb_modules_AttributeGlobal_name">
             <English>Run Globally</English>
         </Key>
-        <Key ID="STR_dumb_zeus_AttributeTitle_name">
+        <Key ID="STR_dumb_modules_AttributeTitle_name">
             <English>Title</English>
         </Key>
-        <Key ID="STR_dumb_zeus_cinemaBorder_AttributeGlobal_tooltip">
+        <Key ID="STR_dumb_modules_cinemaBorder_AttributeGlobal_tooltip">
             <English>If enabled, all players will recieve the effect rather than only players in the module's area.</English>
         </Key>
-        <Key ID="STR_dumb_zeus_cinemaBorder_AttributeTitle_tooltip">
+        <Key ID="STR_dumb_modules_cinemaBorder_AttributeTitle_tooltip">
             <English>Text displayed over the letterbox effecet</English>
         </Key>
-        <Key ID="STR_dumb_zeus_cinemaBorder_description">
+        <Key ID="STR_dumb_modules_cinemaBorder_description">
             <English>Creates a Halo style "chapter title" effect, with black bars sliding in from the top and bottom with a title displayed in the bottom right.</English>
         </Key>
-        <Key ID="STR_dumb_zeus_cinemaBorder_name">
+        <Key ID="STR_dumb_modules_cinemaBorder_name">
             <English>Create Cinema Border</English>
         </Key>
-        <Key ID="STR_dumb_zeus_displayName">
-            <English>Zeus</English>
+        <Key ID="STR_dumb_modules_displayName">
+            <English>Modules</English>
         </Key>
-        <Key ID="STR_dumb_zeus_invalidValue">
+        <Key ID="STR_dumb_modules_invalidValue">
             <English>Invalid value</English>
         </Key>
-        <Key ID="STR_dumb_zeus_modulesCategory">
+        <Key ID="STR_dumb_modules_modulesCategory">
             <English>DUMB Modules</English>
         </Key>
     </Package>

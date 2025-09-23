@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * _control call dumb_zeus_fnc_ui_attributeDuration
+ * _control call dumb_modules_fnc_ui_attributeDuration
  *
  * Public: No
  */

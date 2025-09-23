@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * function = "dumb_zeus_fnc_moduleCinemaBorder";
+ * function = "dumb_modules_fnc_moduleCinemaBorder";
  *
  * Public: No
  */

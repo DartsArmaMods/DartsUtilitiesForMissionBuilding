@@ -15,7 +15,7 @@
  * None
  *
  * Example:
- * "message" call dumb_zeus_fnc_errorAndClose
+ * "message" call dumb_modules_fnc_errorAndClose
  *
  * Public: No
  */
