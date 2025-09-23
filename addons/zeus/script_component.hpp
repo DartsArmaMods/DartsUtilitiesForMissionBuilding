@@ -7,5 +7,6 @@
 // #define ENABLE_PERFORMANCE_COUNTERS
 
 #include "\z\dumb\addons\main\script_macros.hpp"
+#include "\z\dumb\addons\common\defines.hpp"
 #include "script_macros.hpp"
 #include "defines.hpp"

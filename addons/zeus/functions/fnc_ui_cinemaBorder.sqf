@@ -38,7 +38,7 @@ private _fnc_onConfirm = {
     if (isNull _logic) exitWith {};
 
     private _title = _display getVariable [QGVAR(title), ""];
-    private _duration = _display getVariable [QGVAR(duration), 8];
+    private _duration = _display getVariable [QGVAR(duration), CINEMA_BORDER_DEFAULT_DURATION];
 
     [_title, _duration] call EFUNC(common,cinemaBorderGlobal);
     deleteVehicle _logic;

@@ -24,7 +24,7 @@ if (!hasInterface) exitWith {};
 
 params [
     ["_title", "", [""]],
-    ["_duration", 8, [0]]
+    ["_duration", CINEMA_BORDER_DEFAULT_DURATION, [0]]
 ];
 TRACE_2("fnc_cinemaBorder",_title,_duration);
 

@@ -9,10 +9,12 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "dumb_main",
+            "ace_modules",
             "ace_zeus"
         };
         units[] = {
-            QGVAR(moduleCinemaBorder)
+            QGVAR(moduleCinemaBorder),
+            QGVAR(moduleCinemaBorder_zeus)
         };
         weapons[] = {};
         VERSION_CONFIG;

@@ -22,7 +22,7 @@ _control ctrlRemoveAllEventHandlers "SetFocus";
 
 private _edit = _control controlsGroupCtrl IDC_DURATION_DURATION;
 
-_edit ctrlSetText "8";
+_edit ctrlSetText QUOTE(CINEMA_BORDER_DEFAULT_DURATION);
 
 private _fnc_onKeyUp = {
     params ["_display"];
