@@ -13,8 +13,9 @@ class CfgPatches {
             "ace_zeus"
         };
         units[] = {
-            QGVAR(moduleCinemaBorder),
-            QGVAR(moduleCinemaBorder_zeus)
+            QMODULE(CinemaBorder),
+            QMODULE(CinemaBorder_zeus),
+            QMODULE(SpaceDebris)
         };
         weapons[] = {};
         VERSION_CONFIG;

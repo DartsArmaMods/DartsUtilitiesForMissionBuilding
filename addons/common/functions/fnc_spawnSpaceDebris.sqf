@@ -1,0 +1,68 @@
+#include "..\script_component.hpp"
+/*
+ * Authors: DartRuffian
+ * Creates space debris within a given area.
+ *
+ * Arguments:
+ * 0: Area center <OBJECT|ARRAY>
+ *    - Array must be format PositionASL
+ * 1: Area Array <ARRAY>
+ *    - 0: Length (A) <NUMBER>
+ *    - 1: Width (B) <NUMBER>
+ *    - 2: Height (C) <NUMBER>
+ *    - 3: Is rectangle <BOOL>
+ *         - True to use a rectangle shape, false to use ellipsis
+ * 3: Objects to spawn <NUMBER>
+ *
+ * Return Value:
+ * Created objects <ARRAY>
+ *   - Only returned when executed on the server
+ *
+ * Example:
+ * [player, 100, 100, 50, true, 10] call dumb_common_fnc_spawnSpaceDebris
+ *
+ * Public: Yes
+ */
+
+params [
+    ["_center", objNull, [objNull, []], 3],
+    // ["_preset", "", [""]],
+    ["_a", 0, [0]],
+    ["_b", 0, [0]],
+    ["_c", 0, [0]],
+    ["_direction", 0, [0]],
+    ["_isRectangle", false, [false]],
+    ["_objectCount", 0, [0]]
+];
+TRACE_7("fnc_spawnSpaceDebris",_center,_a,_b,_c,_direction,_isRectangle,_objectCount);
+
+if (_objectCount <= 0 || { ([_a, _b, _c] find 0) != -1 }) exitWith { [] };
+
+if (!isServer) exitWith {
+    [QGVAR(spawnSpaceDebris), _this] call CBA_fnc_serverEvent;
+    [];
+};
+
+private _area = [_center, [_a, _b, _direction, _isRectangle]];
+private _objects = [];
+private _randomHeight = [-_c / 2, 0, _c];
+private _baseHeight = if (_center isEqualType objNull) then {
+    getPosASL _center select 2;
+} else { _center select 2 };
+
+private ["_position", "_object"]; // Only create var once
+for "_" from 1 to _objectCount do {
+    _position = _area call BIS_fnc_randomPosTrigger; // Seemingly returns as PositionAGL
+
+    // Does not randomize height, so we do it manually
+    _position set [2, _baseHeight + random _randomHeight];
+
+    // TODO: Testing, should be global event to send to clients
+    _object = createSimpleObject [selectRandom (GVAR(spaceDebrisPresets) get ELSTRING(common,spaceDebris_preset_shipDebris)), [0, 0, 0], true];
+    _object setPosASL _position;
+    _object setVectorDirAndUp [[] call CBA_fnc_randomVector3D, [] call CBA_fnc_randomVector3D];
+
+    _objects pushBack _object;
+};
+
+_objects;

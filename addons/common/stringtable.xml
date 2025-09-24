@@ -4,5 +4,11 @@
         <Key ID="STR_dumb_common_displayName">
             <English>Common</English>
         </Key>
+        <Key ID="STR_dumb_common_spaceDebris_preset_asteroids">
+            <English>Asteroids</English>
+        </Key>
+        <Key ID="STR_dumb_common_spaceDebris_preset_shipDebris">
+            <English>Ship Debris</English>
+        </Key>
     </Package>
 </Project>

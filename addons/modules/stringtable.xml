@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="DUMB">
     <Package name="Modules">
+        <Key ID="STR_dumb_modules_AttributeCount_name">
+            <English>Count</English>
+        </Key>
         <Key ID="STR_dumb_modules_AttributeDuration_name">
             <English>Duration</English>
         </Key>
@@ -23,7 +26,7 @@
             <English>Creates a Halo style "chapter title" effect, with black bars sliding in from the top and bottom with a title displayed in the bottom right.</English>
         </Key>
         <Key ID="STR_dumb_modules_cinemaBorder_name">
-            <English>Create Cinema Border</English>
+            <English>Cinema Border</English>
         </Key>
         <Key ID="STR_dumb_modules_displayName">
             <English>Modules</English>
@@ -33,6 +36,27 @@
         </Key>
         <Key ID="STR_dumb_modules_modulesCategory">
             <English>DUMB Modules</English>
+        </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_AttributeCount_tooltip">
+            <English>The number of debris objects to spawn</English>
+        </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_AttributeDriftDirection_name">
+            <English>Drift Direction</English>
+        </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_AttributeDriftDirection_tooltip">
+            <English>Specifies the direction for the objects to drift in</English>
+        </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_AttributeDrifting_name">
+            <English>Drifting</English>
+        </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_AttributeDrifting_tooltip">
+            <English>If enabled, spawned objects will slowly drift in a specified direction</English>
+        </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_description">
+            <English>Spawns a number of space debris objects floating in a random area around the module. The objects are created locally on each player's machine.</English>
+        </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_name">
+            <English>Space Debris</English>
         </Key>
     </Package>
 </Project>

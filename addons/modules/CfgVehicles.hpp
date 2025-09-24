@@ -8,7 +8,7 @@ class CfgVehicles {
         };
         class ModuleDescription;
     };
-    class GVAR(moduleBase): Module_F {
+    class MODULE(Base): Module_F {
         scope = 0;
         scopeCurator = 2;
         author = AUTHOR;
@@ -19,7 +19,7 @@ class CfgVehicles {
     };
 
     // Separate modules to avoid issues with Zeuses editing Eden-placed modules
-    class GVAR(moduleCinemaBorder): GVAR(moduleBase) {
+    class MODULE(CinemaBorder): MODULE(Base) {
         scope = 2;
         scopeCurator = 0;
         author = AUTHOR;
@@ -68,10 +68,62 @@ class CfgVehicles {
         };
     };
 
-    class GVAR(moduleCinemaBorder_zeus): GVAR(moduleBase) {
+    class MODULE(CinemaBorder_zeus): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
         displayName = CSTRING(cinemaBorder_name);
         curatorInfoType = QGVAR(RscCinemaBorder);
+    };
+
+    class MODULE(SpaceDebris): MODULE(Base) {
+        scope = 2;
+        scopeCurator = 0;
+        author = AUTHOR;
+        displayName = CSTRING(spaceDebris_name);
+
+        // JIP is handled in fnc_spawnSpaceDebris
+        is3DEN = 1;
+        function = QFUNC(moduleSpaceDebris);
+
+        class Attributes: AttributesBase {
+            class GVAR(count): Edit {
+                displayName = CSTRING(AttributeCount_name);
+                tooltip = CSTRING(spaceDebris_AttributeCount_tooltip);
+                property = QGVAR(count);
+                defaultValue = "300";
+                validate = "NUMBER";
+            };
+
+            class GVAR(drifting): Checkbox {
+                displayName = CSTRING(spaceDebris_AttributeDrifting_name);
+                tooltip = CSTRING(spaceDebris_AttributeDrifting_tooltip);
+                property = QGVAR(drifting);
+                defaultValue = "false";
+            };
+
+            class GVAR(driftDirection): Edit {
+                displayName = CSTRING(spaceDebris_AttributeDriftDirection_name);
+                tooltip = CSTRING(spaceDebris_AttributeDriftDirection_tooltip);
+                property = QGVAR(driftDirection);
+                defaultValue = "0";
+                validate = "NUMBER";
+                control = "EditZ";
+            };
+
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        canSetArea = 1;
+        canSetAreaShape = 1;
+        canSetAreaHeight = 1;
+        class AttributeValues {
+            size3[] = {500, 500, 250};
+            isRectangle = 1;
+            // TODO: Mark that direction does affect the module
+        };
+
+        class ModuleDescription: ModuleDescription {
+            description = CSTRING(spaceDebris_description);
+        };
     };
 };
