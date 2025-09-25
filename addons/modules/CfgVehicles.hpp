@@ -119,10 +119,10 @@ class CfgVehicles {
         class AttributeValues {
             size3[] = {500, 500, 250};
             isRectangle = 1;
-            // TODO: Mark that direction does affect the module
         };
 
         class ModuleDescription: ModuleDescription {
+            direction = 1;
             description = CSTRING(spaceDebris_description);
         };
     };
