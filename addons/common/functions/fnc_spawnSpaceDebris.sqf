@@ -45,7 +45,7 @@ if (!isServer) exitWith {
 
 private _area = [_center, [_a, _b, _direction, _isRectangle]];
 private _objects = [];
-private _randomHeight = [-_c / 2, 0, _c];
+private _halfHeight = _c / 2;
 private _baseHeight = if (_center isEqualType objNull) then {
     getPosASL _center select 2;
 } else { _center select 2 };
@@ -55,7 +55,8 @@ for "_" from 1 to _objectCount do {
     _position = _area call BIS_fnc_randomPosTrigger; // Seemingly returns as PositionAGL
 
     // Does not randomize height, so we do it manually
-    _position set [2, _baseHeight + random _randomHeight];
+    private _randomHeight = (_halfHeight + random (-_halfHeight - _halfHeight));
+    _position set [2, _baseHeight + _randomHeight];
 
     // TODO: Testing, should be global event to send to clients
     _object = createSimpleObject [selectRandom (GVAR(spaceDebrisPresets) get ELSTRING(common,spaceDebris_preset_shipDebris)), [0, 0, 0], true];
