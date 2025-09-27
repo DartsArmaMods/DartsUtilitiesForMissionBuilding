@@ -91,7 +91,7 @@ class CfgVehicles {
                 displayName = CSTRING(AttributeCount_name);
                 tooltip = CSTRING(spaceDebris_AttributeCount_tooltip);
                 property = QGVAR(count);
-                defaultValue = "300";
+                defaultValue = QUOTE(DEFAULT_OBJECT_COUNT);
                 validate = "NUMBER";
             };
 

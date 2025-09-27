@@ -42,7 +42,7 @@ _input params ["_logic"];
     _return;
 }) params ["_a", "_b", "_direction", "_isRectangle", "_c", "_preset"];
 
-private _objectCount = _logic getVariable [QGVAR(count), 300];
+private _objectCount = _logic getVariable [QGVAR(count), DEFAULT_OBJECT_COUNT];
 
 switch (_mode) do {
     // Called on initial place and when any attribute changes (including position)
