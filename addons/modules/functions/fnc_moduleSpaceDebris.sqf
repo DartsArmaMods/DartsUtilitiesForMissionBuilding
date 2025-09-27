@@ -28,12 +28,19 @@ _input params ["_logic"];
 
 (if (is3DEN) then {
     private _return = (_logic get3DENAttribute "Size3") select 0;
-    _return insert [2, [getDir _logic]]; // Add value for angle, though it's unused
+    _return insert [2, [getDir _logic]];
     _return insert [3, _logic get3DENAttribute "IsRectangle"];
+    private _preset = (_logic get3DENAttribute QGVAR(preset)) select 0;
+    if (_preset == "") then {
+        _preset = "shipDebris";
+    };
+    _return pushBack _preset;
     _return;
 } else {
-    _logic getVariable ["objectArea", [500, 500, getDir _logic, true, 250]];
-}) params ["_a", "_b", "_direction", "_isRectangle", "_c"];
+    private _return = _logic getVariable ["objectArea", [500, 500, getDir _logic, true, 250]];
+    _return pushBack (_logic getVariable [QGVAR(preset), "shipDebris"]);
+    _return;
+}) params ["_a", "_b", "_direction", "_isRectangle", "_c", "_preset"];
 
 private _objectCount = _logic getVariable [QGVAR(count), 300];
 
@@ -41,13 +48,13 @@ switch (_mode) do {
     // Called on initial place and when any attribute changes (including position)
     case "attributesChanged3DEN": {
         deleteVehicle (_logic getVariable [QGVAR(edenPreviews), []]);
-        private _ret = [_logic, "shipDebris", [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
+        private _ret = [_logic, _preset, [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
         _logic setVariable [QGVAR(edenPreviews), _ret];
     };
 
     // NOT called when placed, but is called when module is deleted and then undo'd
     case "registeredToWorld3DEN": {
-        private _ret = [_logic, "shipDebris", [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
+        private _ret = [_logic, _preset, [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
         _logic setVariable [QGVAR(edenPreviews), _ret];
     };
 

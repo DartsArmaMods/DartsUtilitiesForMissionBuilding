@@ -8,13 +8,14 @@ PREP_RECOMPILE_END;
 GVAR(spaceDebrisPresets) = createHashMapFromArray [
     [
         "shipDebris", [
-            LLSTRING(spaceDebris_preset_shipDebris), [
+            LSTRING(spaceDebrisPreset_shipDebris), [
                 "Land_DomeDebris_01_struts_large_green_F",
                 "Land_DomeDebris_01_struts_small_green_F"
             ]
         ]
     ], [
-        "asteroids", [LSTRING(spaceDebris_preset_asteroids), [
+        "asteroids", [
+            LSTRING(spaceDebrisPreset_asteroids), [
                 "Land_Lavaboulder_02_F",
                 "Land_Lavaboulder_03_F",
                 "Land_SharpRock_monolith",
@@ -27,7 +28,8 @@ GVAR(spaceDebrisPresets) = createHashMapFromArray [
             ]
         ]
     ], [
-        "asteroidsSmall", [LSTRING(spaceDebris_preset_asteroidsSmall), [
+        "asteroidsSmall", [
+            LSTRING(spaceDebrisPreset_asteroidsSmall), [
                 "Land_Bare_boulder_01_F",
                 "Land_Bare_boulder_02_F",
                 "Land_Bare_boulder_03_F",

@@ -4,6 +4,7 @@ class CfgVehicles {
         class AttributesBase {
             class Edit;
             class Checkbox;
+            class Combo;
             class ModuleDescription;
         };
         class ModuleDescription;
@@ -92,6 +93,14 @@ class CfgVehicles {
                 property = QGVAR(count);
                 defaultValue = "300";
                 validate = "NUMBER";
+            };
+
+            class GVAR(preset): Combo {
+                displayName = ECSTRING(common,spaceDebrisPreset_name);
+                tooltip = ECSTRING(common,spaceDebrisPreset_tooltip);
+                property = QGVAR(preset);
+                control = QGVAR(spaceDebrisPreset);
+                defaultValue = "''";
             };
 
             class GVAR(drifting): Checkbox {

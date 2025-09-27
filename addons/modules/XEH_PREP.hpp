@@ -1,3 +1,4 @@
+PREP(3DEN_spaceDebrisPresetOnLoad);
 PREP(errorAndClose);
 PREP(moduleCinemaBorder);
 PREP(moduleSpaceDebris);
