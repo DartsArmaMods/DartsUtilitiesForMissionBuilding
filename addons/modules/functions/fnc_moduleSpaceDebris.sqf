@@ -41,13 +41,13 @@ switch (_mode) do {
     // Called on initial place and when any attribute changes (including position)
     case "attributesChanged3DEN": {
         deleteVehicle (_logic getVariable [QGVAR(edenPreviews), []]);
-        private _ret = [_logic, _a, _b, _c, _direction, _isRectangle, _objectCount] call EFUNC(common,spawnSpaceDebris);
+        private _ret = [_logic, "shipDebris", [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
         _logic setVariable [QGVAR(edenPreviews), _ret];
     };
 
     // NOT called when placed, but is called when module is deleted and then undo'd
     case "registeredToWorld3DEN": {
-        private _ret = [_logic, _a, _b, _c, _direction, _isRectangle, _objectCount] call EFUNC(common,spawnSpaceDebris);
+        private _ret = [_logic, "shipDebris", [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
         _logic setVariable [QGVAR(edenPreviews), _ret];
     };
 
