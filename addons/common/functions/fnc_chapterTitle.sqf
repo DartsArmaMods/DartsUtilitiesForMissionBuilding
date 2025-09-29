@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * ["They call it... Halo", 8] call dumb_common_fnc_cinemaBorder
+ * ["They call it... Halo", 8] call dumb_common_fnc_chapterTitle
  *
  * Public: Yes
  */
@@ -26,23 +26,23 @@ params [
     ["_title", "", [""]],
     ["_duration", CINEMA_BORDER_DEFAULT_DURATION, [0]]
 ];
-TRACE_2("fnc_cinemaBorder",_title,_duration);
+TRACE_2("fnc_chapterTitle",_title,_duration);
 
 // Mission makers may just want the bars, only exit if duration is invalid or display is already open
-if (_duration <= 0 || !isNull (uiNamespace getVariable [QGVAR(RscCinemaBorder), displayNull])) exitWith {};
+if (_duration <= 0 || !isNull (uiNamespace getVariable [QGVAR(RscChapterTitle), displayNull])) exitWith {};
 
 openMap false;
 
 [{
     // Hide everything but radar and side panels
     // See https://github.com/acemod/ACE3/blob/master/addons/common/functions/fnc_showHud.sqf for details
-    [QGVAR(cinemaBorder), [false, false, true, false, false, false, false, false, true, false]] call ace_common_fnc_showHud;
+    [QGVAR(chapterTitle), [false, false, true, false, false, false, false, false, true, false]] call ace_common_fnc_showHud;
 }, nil, BORDER_FADE_DURATION] call CBA_fnc_waitAndExecute;
 
-private _layer = QGVAR(RscCinemaBorder) call BIS_fnc_RscLayer;
-_layer cutRsc [QGVAR(RscCinemaBorder), "PLAIN", -1, false];
+private _layer = QGVAR(RscChapterTitle) call BIS_fnc_RscLayer;
+_layer cutRsc [QGVAR(RscChapterTitle), "PLAIN", -1, false];
 
-private _borderDisplay = uiNamespace getVariable [QGVAR(RscCinemaBorder), displayNull];
+private _borderDisplay = uiNamespace getVariable [QGVAR(RscChapterTitle), displayNull];
 if (isNull _borderDisplay) exitWith {
     _layer cutFadeOut 0;
     ERROR("Failed to create chapter title border");
@@ -90,7 +90,7 @@ if (_title != "") then {
 // Slide bars back out of frame before the display is closed
 [{
     // Clear our reason for hiding hud
-    ["dumb_common_cinemaBorder", []] call ace_common_fnc_showHud;
+    ["dumb_common_chapterTitle", []] call ace_common_fnc_showHud;
 
     params ["_ctrlBorderTop", "_ctrlBorderBottom", "_originalPositions"];
     _ctrlBorderTop ctrlSetPosition (_originalPositions select 0);

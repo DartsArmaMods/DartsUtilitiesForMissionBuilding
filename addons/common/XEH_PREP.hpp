@@ -1,3 +1,3 @@
-PREP(cinemaBorder);
-PREP(cinemaBorderGlobal);
 PREP(spawnSpaceDebris);
+PREP(chapterTitle);
+PREP(chapterTitleGlobal);

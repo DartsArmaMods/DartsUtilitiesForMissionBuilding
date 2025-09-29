@@ -20,20 +20,20 @@ class CfgVehicles {
     };
 
     // Separate modules to avoid issues with Zeuses editing Eden-placed modules
-    class MODULE(CinemaBorder): MODULE(Base) {
+    class MODULE(ChapterTitle): MODULE(Base) {
         scope = 2;
         scopeCurator = 0;
         author = AUTHOR;
-        displayName = CSTRING(cinemaBorder_name);
+        displayName = CSTRING(chapterTitle_name);
 
-        function = QFUNC(moduleCinemaBorder);
+        function = QFUNC(moduleChapterTitle);
         isTriggerActivated = 1;
 
         class Attributes: AttributesBase {
             // The Attribute class name is what's used as the variable name, not the property
             class GVAR(title): Edit {
                 displayName = CSTRING(AttributeTitle_name);
-                tooltip = CSTRING(cinemaBorder_AttributeTitle_tooltip);
+                tooltip = CSTRING(chapterTitle_AttributeTitle_tooltip);
                 property = QGVAR(title);
                 defaultValue = "''";
             };
@@ -48,7 +48,7 @@ class CfgVehicles {
 
             class GVAR(global): Checkbox {
                 displayName = CSTRING(AttributeGlobal_name);
-                tooltip = CSTRING(cinemaBorder_AttributeGlobal_tooltip);
+                tooltip = CSTRING(chapterTitle_AttributeGlobal_tooltip);
                 property = QGVAR(global);
                 defaultValue = "true";
             };
@@ -65,15 +65,15 @@ class CfgVehicles {
         };
 
         class ModuleDescription: ModuleDescription {
-            description = CSTRING(cinemaBorder_description);
+            description = CSTRING(chapterTitle_description);
         };
     };
 
-    class MODULE(CinemaBorder_zeus): MODULE(Base) {
+    class MODULE(ChapterTitle_zeus): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
-        displayName = CSTRING(cinemaBorder_name);
-        curatorInfoType = QGVAR(RscCinemaBorder);
+        displayName = CSTRING(chapterTitle_name);
+        curatorInfoType = QGVAR(RscChapterTitle);
     };
 
     class MODULE(SpaceDebris): MODULE(Base) {

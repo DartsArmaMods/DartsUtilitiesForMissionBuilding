@@ -16,17 +16,17 @@
         <Key ID="STR_dumb_modules_AttributeTitle_name">
             <English>Title</English>
         </Key>
-        <Key ID="STR_dumb_modules_cinemaBorder_AttributeGlobal_tooltip">
+        <Key ID="STR_dumb_modules_chapterTitle_AttributeGlobal_tooltip">
             <English>If enabled, all players will recieve the effect rather than only players in the module's area.</English>
         </Key>
-        <Key ID="STR_dumb_modules_cinemaBorder_AttributeTitle_tooltip">
+        <Key ID="STR_dumb_modules_chapterTitle_AttributeTitle_tooltip">
             <English>Text displayed over the letterbox effecet</English>
         </Key>
-        <Key ID="STR_dumb_modules_cinemaBorder_description">
+        <Key ID="STR_dumb_modules_chapterTitle_description">
             <English>Creates a Halo style "chapter title" effect, with black bars sliding in from the top and bottom with a title displayed in the bottom right.</English>
         </Key>
-        <Key ID="STR_dumb_modules_cinemaBorder_name">
-            <English>Cinema Border</English>
+        <Key ID="STR_dumb_modules_chapterTitle_name">
+            <English>Chapter Title</English>
         </Key>
         <Key ID="STR_dumb_modules_displayName">
             <English>Modules</English>

@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Authors: DartRuffian
- * Handles the cinema border module in Eden.
+ * Handles the chapter title module in Eden.
  *
  * Arguments:
  * 0: Module <OBJECT>
@@ -12,18 +12,18 @@
  * None
  *
  * Example:
- * function = "dumb_modules_fnc_moduleCinemaBorder";
+ * function = "dumb_modules_fnc_moduleChapterTitle";
  *
  * Public: No
  */
 
 params ["_logic", "", "_activated"];
-TRACE_2("fnc_moduleCinemaBorder",_logic,_activated);
+TRACE_2("fnc_moduleChapterTitle",_logic,_activated);
 
 if !(isServer && _activated) exitWith {};
 
 if (_logic getVariable [QGVAR(global), false]) exitWith {
-    [_logic getVariable [QGVAR(title), ""], _logic getVariable [QGVAR(duration), CINEMA_BORDER_DEFAULT_DURATION]] call EFUNC(common,cinemaBorderGlobal);
+    [_logic getVariable [QGVAR(title), ""], _logic getVariable [QGVAR(duration), CINEMA_BORDER_DEFAULT_DURATION]] call EFUNC(common,chapterTitleGlobal);
 };
 
 // X, Y, Angle, isRectangle, Z
@@ -31,5 +31,5 @@ if (_logic getVariable [QGVAR(global), false]) exitWith {
 private _players = ([] call CBA_fnc_players) inAreaArray [_logic, _a, _b, 0, _isRectangle, _c];
 
 if (_players isNotEqualTo []) then {
-    [EGVAR(common,cinemaBorder), [_logic getVariable [QGVAR(title), ""], _logic getVariable [QGVAR(duration), CINEMA_BORDER_DEFAULT_DURATION]], _players] call CBA_fnc_targetEvent;
+    [EGVAR(common,chapterTitle), [_logic getVariable [QGVAR(title), ""], _logic getVariable [QGVAR(duration), CINEMA_BORDER_DEFAULT_DURATION]], _players] call CBA_fnc_targetEvent;
 };

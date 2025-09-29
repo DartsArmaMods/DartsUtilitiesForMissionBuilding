@@ -13,8 +13,8 @@ class CfgPatches {
             "ace_zeus"
         };
         units[] = {
-            QMODULE(CinemaBorder),
-            QMODULE(CinemaBorder_zeus),
+            QMODULE(ChapterTitle),
+            QMODULE(ChapterTitle_zeus),
             QMODULE(SpaceDebris)
         };
         weapons[] = {};

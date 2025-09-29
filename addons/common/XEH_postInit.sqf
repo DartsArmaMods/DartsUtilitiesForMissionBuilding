@@ -5,5 +5,5 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
-    [QGVAR(cinemaBorder), LINKFUNC(cinemaBorder)] call CBA_fnc_addEventHandler;
+    [QGVAR(chapterTitle), LINKFUNC(chapterTitle)] call CBA_fnc_addEventHandler;
 };

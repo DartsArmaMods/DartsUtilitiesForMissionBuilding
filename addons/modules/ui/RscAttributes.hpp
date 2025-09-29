@@ -83,22 +83,22 @@ class GVAR(AttributeDuration): RscControlsGroupNoScrollbars {
     };
 };
 
-class GVAR(RscCinemaBorder): RscDisplayAttributes {
-    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscCinemaBorder))] call ace_zeus_fnc_zeusAttributes);
-    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscCinemaBorder))] call ace_zeus_fnc_zeusAttributes);
+class GVAR(RscChapterTitle): RscDisplayAttributes {
+    onLoad = QUOTE([ARR_3('onLoad',_this,QQGVAR(RscChapterTitle))] call ace_zeus_fnc_zeusAttributes);
+    onUnload = QUOTE([ARR_3('onUnload',_this,QQGVAR(RscChapterTitle))] call ace_zeus_fnc_zeusAttributes);
     class Controls: Controls {
         class Background: Background {};
         class Title: Title {};
         class Content: Content {
             class Controls {
                 class title: GVAR(AttributeTitle) {
-                    tooltip = CSTRING(cinemaBorder_AttributeTitle_tooltip);
+                    tooltip = CSTRING(chapterTitle_AttributeTitle_tooltip);
                 };
                 class duration: GVAR(AttributeDuration) {};
             };
         };
         class ButtonOK: ButtonOK {
-            onSetFocus = QUOTE(call FUNC(ui_cinemaBorder));
+            onSetFocus = QUOTE(call FUNC(ui_chapterTitle));
         };
         class ButtonCancel: ButtonCancel {};
     };

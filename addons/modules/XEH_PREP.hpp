@@ -5,4 +5,4 @@ PREP(moduleSpaceDebris);
 PREP(moduleSpaceDebris_createFromSavedData);
 PREP(ui_attributeDuration);
 PREP(ui_attributeTitle);
-PREP(ui_cinemaBorder);
+PREP(ui_chapterTitle);

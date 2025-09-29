@@ -1,4 +1,4 @@
-class GVAR(RscCinemaBorder) {
+class GVAR(RscChapterTitle) {
     idd = -1;
     duration = 9.9999998e+010;
     movingEnable = 0;
@@ -6,8 +6,8 @@ class GVAR(RscCinemaBorder) {
     fadeIn = 0;
     fadeOut = 0;
 
-    onLoad = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(RscCinemaBorder),_this select 0)]);
-    onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(RscCinemaBorder),nil)]);
+    onLoad = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(RscChapterTitle),_this select 0)]);
+    onUnload = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(RscChapterTitle),nil)]);
 
     class controls {
         class LetterBoxTop: RscText {
