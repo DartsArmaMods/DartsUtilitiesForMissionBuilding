@@ -40,6 +40,12 @@
         <Key ID="STR_dumb_modules_spaceDebris_AttributeCount_tooltip">
             <English>The number of debris objects to spawn</English>
         </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_AttributeDebrisData_name">
+            <English>Debris Data</English>
+        </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_AttributeDebrisData_tooltip">
+            <English>Do not edit directly!\nContains position and rotation data</English>
+        </Key>
         <Key ID="STR_dumb_modules_spaceDebris_AttributeDriftDirection_name">
             <English>Drift Direction</English>
         </Key>
@@ -52,11 +58,11 @@
         <Key ID="STR_dumb_modules_spaceDebris_AttributeDrifting_tooltip">
             <English>If enabled, spawned objects will slowly drift in a specified direction</English>
         </Key>
+        <Key ID="STR_dumb_modules_spaceDebris_AttributeParamsOld_name">
+            <English>Space Debris Parameters</English>
+        </Key>
         <Key ID="STR_dumb_modules_spaceDebris_description">
             <English>Spawns a number of space debris objects floating in a random area around the module. The objects are created locally on each player's machine.</English>
-        </Key>
-        <Key ID="STR_dumb_modules_spaceDebris_name">
-            <English>Space Debris</English>
         </Key>
     </Package>
 </Project>

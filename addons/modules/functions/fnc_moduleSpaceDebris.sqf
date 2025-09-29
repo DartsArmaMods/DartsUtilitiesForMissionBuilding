@@ -19,6 +19,8 @@
  * Public: No
  */
 
+// Do not question this code, only my sanity.
+
 params ["_mode", "_input"];
 TRACE_2("fnc_moduleSpaceDebris",_logic,_input);
 
@@ -44,32 +46,43 @@ _input params ["_logic"];
 
 private _objectCount = _logic getVariable [QGVAR(count), DEFAULT_OBJECT_COUNT];
 
-switch (_mode) do {
-    // Called on initial place and when any attribute changes (including position)
-    case "attributesChanged3DEN": {
-        deleteVehicle (_logic getVariable [QGVAR(edenPreviews), []]);
-        private _ret = [_logic, _preset, [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
-        _logic setVariable [QGVAR(edenPreviews), _ret];
+private _fnc_deleteAndCreateObjects = {
+    private _lastParams = (_logic get3DENAttribute QGVAR(paramsOld) select 0);
+
+    // Only delete/create new objects if last params are empty or different from current
+    private _currentParams = str [getPosASL _logic, _preset, [_a, _b, _c, _direction, _isRectangle], _objectCount];
+    if (_lastParams == _currentParams) exitWith {
+        _logic call FUNC(moduleSpaceDebris_createFromSavedData);
     };
 
+    _logic set3DENAttribute [QGVAR(paramsOld), _currentParams];
+
+    deleteVehicle (_logic getVariable [QGVAR(debrisObjects), []]);
+    private _objects = [_logic, _preset, [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
+    _logic setVariable [QGVAR(debrisObjects), _objects];
+    _logic set3DENAttribute [QGVAR(debrisData), str (_objects apply {
+        [typeOf _x, getPosASL _x, [vectorDir _x, vectorUp _x]];
+    })];
+};
+
+switch (_mode) do {
+    // Called on initial place and when any attribute changes (including position), also called when returning to Eden from playtesting
+    case "attributesChanged3DEN": _fnc_deleteAndCreateObjects;
+
     // NOT called when placed, but is called when module is deleted and then undo'd
-    case "registeredToWorld3DEN": {
-        private _ret = [_logic, _preset, [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
-        _logic setVariable [QGVAR(edenPreviews), _ret];
-    };
+    case "registeredToWorld3DEN": _fnc_deleteAndCreateObjects;
 
     // Called when deleted
     case "unregisteredFromWorld3DEN": {
-        deleteVehicle (_logic getVariable [QGVAR(edenPreviews), []]);
+        deleteVehicle (_logic getVariable [QGVAR(debrisObjects), []]);
     };
 
     // Mission start
     case "init": {
         _input params ["", "_activated"];
+
         if (!_activated) exitWith {};
 
-        // Just in case, but all of the previews should be cleared when mission is actually started
-        deleteVehicle (_logic getVariable [QGVAR(edenPreviews), []]);
-        private _ret = [_logic, _a, _b, _c, _direction, _isRectangle, _objectCount] call EFUNC(common,spawnSpaceDebris);
+        _logic call FUNC(moduleSpaceDebris_createFromSavedData);
     };
 };

@@ -9,59 +9,59 @@ GVAR(spaceDebrisPresets) = createHashMapFromArray [
     [
         "shipDebris", [
             LSTRING(spaceDebrisPreset_shipDebris), [
-                "Land_DomeDebris_01_struts_large_green_F",
-                "Land_DomeDebris_01_struts_small_green_F"
+                "Land_DomeDebris_01_struts_large_green_F", 1,
+                "Land_DomeDebris_01_struts_small_green_F", 1
             ]
         ]
     ], [
         "asteroids", [
             LSTRING(spaceDebrisPreset_asteroids), [
-                "Land_Lavaboulder_02_F",
-                "Land_Lavaboulder_03_F",
-                "Land_SharpRock_monolith",
-                "Land_SharpRock_spike",
-                "Land_SharpRock_wallV",
-                "Land_W_sharpRock_monolith",
-                "Land_W_sharpRock_spike",
-                "Land_W_sharpRock_wallH",
-                "Land_W_sharpRock_wallV"
+                "Land_Lavaboulder_02_F", 1,
+                "Land_Lavaboulder_03_F", 1,
+                "Land_SharpRock_monolith", 1,
+                "Land_SharpRock_spike", 1,
+                "Land_SharpRock_wallV", 0.05,
+                "Land_W_sharpRock_monolith", 1,
+                "Land_W_sharpRock_spike", 1,
+                "Land_W_sharpRock_wallH", 0.05,
+                "Land_W_sharpRock_wallV", 0.05
             ]
         ]
     ], [
         "asteroidsSmall", [
             LSTRING(spaceDebrisPreset_asteroidsSmall), [
-                "Land_Bare_boulder_01_F",
-                "Land_Bare_boulder_02_F",
-                "Land_Bare_boulder_03_F",
-                "Land_Bare_boulder_04_F",
-                "Land_Bare_boulder_05_F",
-                "Land_LavaStone_big_F",
-                "Land_LavaStone_small_F",
-                "Land_SharpStone_01",
-                "Land_SharpStone_02",
-                "Land_SharpStone_03",
-                "Land_SharpStones_erosion",
-                "Land_Small_Stone_02_F",
-                "Land_W_sharpStone_01",
-                "Land_W_sharpStone_02",
-                "Land_W_sharpStone_03",
-                "Land_W_sharpStones_erosion"
+                "Land_Bare_boulder_01_F", 1,
+                "Land_Bare_boulder_02_F", 1,
+                "Land_Bare_boulder_03_F", 1,
+                "Land_Bare_boulder_04_F", 1,
+                "Land_Bare_boulder_05_F", 1,
+                "Land_LavaStone_big_F", 1,
+                "Land_LavaStone_small_F", 1,
+                "Land_SharpStone_01", 1,
+                "Land_SharpStone_02", 1,
+                "Land_SharpStone_03", 1,
+                "Land_SharpStones_erosion", 1,
+                "Land_Small_Stone_02_F", 1,
+                "Land_W_sharpStone_01", 1,
+                "Land_W_sharpStone_02", 1,
+                "Land_W_sharpStone_03", 1,
+                "Land_W_sharpStones_erosion", 1
             ]
         ]
     ]
 ];
 
 if ("3AS_Prop_Debris" call ace_common_fnc_isModLoaded) then {
-    (GVAR(spaceDebrisPresets) get "shipDebris") append [
-        "3AS_Debris1_Prop",
-        "3AS_Debris2_Prop",
-        "3AS_Debris3_Prop",
-        "3AS_Debris4_Prop",
-        "3AS_Debris5_Prop",
-        "3AS_Debris6_Prop",
-        "3AS_Debris7_Prop",
-        "3AS_Debris8_Prop",
-        "3AS_Debris9_Prop"
+    ((GVAR(spaceDebrisPresets) get "shipDebris") select 1) append [
+        "3AS_Debris1_Prop", 1,
+        "3AS_Debris2_Prop", 1,
+        "3AS_Debris3_Prop", 1,
+        "3AS_Debris4_Prop", 1,
+        "3AS_Debris5_Prop", 1,
+        "3AS_Debris6_Prop", 1,
+        "3AS_Debris7_Prop", 1,
+        "3AS_Debris8_Prop", 1,
+        "3AS_Debris9_Prop", 1
     ];
 };
 

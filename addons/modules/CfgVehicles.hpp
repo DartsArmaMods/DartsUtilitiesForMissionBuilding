@@ -80,7 +80,7 @@ class CfgVehicles {
         scope = 2;
         scopeCurator = 0;
         author = AUTHOR;
-        displayName = CSTRING(spaceDebris_name);
+        displayName = ECSTRING(common,spaceDebris);
 
         // JIP is handled in fnc_spawnSpaceDebris
         is3DEN = 1;
@@ -117,6 +117,20 @@ class CfgVehicles {
                 defaultValue = "0";
                 validate = "NUMBER";
                 control = "EditZ";
+            };
+
+            class GVAR(debrisData): Edit {
+                displayName = CSTRING(spaceDebris_AttributeDebrisData_name);
+                tooltip = CSTRING(spaceDebris_AttributeDebrisData_tooltip);
+                property = QGVAR(debrisData);
+                defaultValue = "''";
+            };
+
+            class GVAR(paramsOld): Edit {
+                displayName = CSTRING(spaceDebris_AttributeParamsOld_name);
+                tooltip = CSTRING(spaceDebris_AttributeDebrisData_tooltip);
+                property = QGVAR(paramsOld);
+                defaultValue = "'[]'";
             };
 
             class ModuleDescription: ModuleDescription {};

@@ -61,17 +61,18 @@ if (_debrisClasses isEqualTo []) exitWith {
     WARNING_1("Preset '%1' has no defined debris classes",_preset);
 };
 
-private ["_position", "_object"]; // Only create var once
+
+private ["_positionASL", "_object"]; // Only create var once
 for "_" from 1 to _objectCount do {
-    _position = _area call BIS_fnc_randomPosTrigger; // Seemingly returns as PositionAGL
+    _positionASL = _area call BIS_fnc_randomPosTrigger; // Seemingly returns as PositionAGL, but we modify the height
 
     // Does not randomize height, so we do it manually
     private _randomHeight = (_halfHeight + random (-_halfHeight - _halfHeight));
-    _position set [2, _baseHeight + _randomHeight];
+    _positionASL set [2, _baseHeight + _randomHeight];
 
     // TODO: Testing, should be global event to send to clients
-    _object = createSimpleObject [selectRandom _debrisClasses, [0, 0, 0], true];
-    _object setPosASL _position;
+    _object = createSimpleObject [selectRandomWeighted _debrisClasses, [0, 0, 0], true];
+    _object setPosASL _positionASL;
     _object setVectorDirAndUp [[] call CBA_fnc_randomVector3D, [] call CBA_fnc_randomVector3D];
 
     _objects pushBack _object;
