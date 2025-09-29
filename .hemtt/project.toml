@@ -12,7 +12,9 @@ include = [
     "mod.cpp",
     "meta.cpp",
     "logo_dumb.png",
+    "logo_dumb_over.png",
     "logo_dumb_ca.paa",
+    "logo_dumb_over_ca.paa",
     "LICENSE.md",
     "README.md",
 ]
