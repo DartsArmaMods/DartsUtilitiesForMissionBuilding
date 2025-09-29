@@ -8,8 +8,8 @@
     <a href="https://github.com/DartsArmaMods/DartsUtilitiesForMissionBuilding/issues">
         <img src="https://img.shields.io/github/issues-raw/DartsArmaMods/DartsUtilitiesForMissionBuilding.svg?style=flat-square&label=Issues" alt="Dart's Utilities for Mission Building Issues">
     </a>
-    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=MOD_ID">
-        <img src="https://img.shields.io/steam/downloads/MOD_ID.svg?style=flat-square&label=Downloads" alt="Dart's Utilities for Mission Building Downloads">
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3573024028">
+        <img src="https://img.shields.io/steam/downloads/3573024028.svg?style=flat-square&label=Downloads" alt="Dart's Utilities for Mission Building Downloads">
     </a>
     <a href="https://github.com/DartsArmaMods/DartsUtilitiesForMissionBuilding/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/License-APL ND-red?style=flat-square" alt="Dart's Utilities for Mission Building License">
@@ -32,7 +32,7 @@ Delete this section after the project has been initially set up:
    - This should be all lowercase.
 4. Find and replace all instances of `DUMB` with the mod's acronym.
    - This should be all uppercase.
-5. After the initial Steam upload, find and replace all instances of `MOD_ID` with the mod's Steam Workshop id.
+5. After the initial Steam upload, find and replace all instances of `3573024028` with the mod's Steam Workshop id.
 
 For third parties, make sure to also replace `DartsArmaMods` with your Github username / organization name, and to replace `DartRuffian` with your username.
 
