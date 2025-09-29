@@ -14,7 +14,7 @@ class CfgVehicles {
         scopeCurator = 2;
         author = AUTHOR;
 
-        category = QGVAR(modules);
+        category = QUOTE(ADDON);
         isGlobal = 1;
         curatorCost = 1;
     };
@@ -81,6 +81,8 @@ class CfgVehicles {
         scopeCurator = 0;
         author = AUTHOR;
         displayName = ECSTRING(common,spaceDebris);
+
+        icon = "dumb_iconModuleSpaceDebris";
 
         // JIP is handled in fnc_spawnSpaceDebris
         is3DEN = 1;

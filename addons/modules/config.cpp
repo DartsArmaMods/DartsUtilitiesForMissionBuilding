@@ -24,6 +24,7 @@ class CfgPatches {
 
 #include "Cfg3DEN.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgVehicleIcons.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
 #include "ui\controls.hpp"
