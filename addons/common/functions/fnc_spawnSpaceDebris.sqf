@@ -61,7 +61,6 @@ if (_debrisClasses isEqualTo []) exitWith {
     WARNING_1("Preset '%1' has no defined debris classes",_preset);
 };
 
-
 private ["_positionASL", "_object"]; // Only create var once
 for "_" from 1 to _objectCount do {
     _positionASL = _area call BIS_fnc_randomPosTrigger; // Seemingly returns as PositionAGL, but we modify the height
