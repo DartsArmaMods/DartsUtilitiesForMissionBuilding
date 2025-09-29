@@ -1,3 +1,3 @@
-PREP(spawnSpaceDebris);
 PREP(chapterTitle);
 PREP(chapterTitleGlobal);
+PREP(spawnSpaceDebris);
