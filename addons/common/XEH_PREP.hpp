@@ -1,2 +1,2 @@
-PREP(cinemaBorder);
-PREP(cinemaBorderGlobal);
+PREP(chapterTitle);
+PREP(chapterTitleGlobal);

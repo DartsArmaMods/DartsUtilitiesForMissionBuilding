@@ -13,8 +13,8 @@ class CfgPatches {
             "ace_zeus"
         };
         units[] = {
-            QGVAR(moduleCinemaBorder),
-            QGVAR(moduleCinemaBorder_zeus)
+            QGVAR(moduleChapterTitle),
+            QGVAR(moduleChapterTitle_zeus)
         };
         weapons[] = {};
         VERSION_CONFIG;

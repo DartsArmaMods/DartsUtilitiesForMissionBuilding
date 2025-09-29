@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Author: DartRuffian
- * Initializes the "Cinema Border" Zeus module display.
+ * Initializes the "Chapter Title" Zeus module display.
  *
  * Arguments:
  * 0: Dummy control group <CONTROL>
@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * _control call dumb_modules_fnc_ui_cinemaBorder
+ * _control call dumb_modules_fnc_ui_chapterTitle
  *
  * Public: No
  */
@@ -40,7 +40,7 @@ private _fnc_onConfirm = {
     private _title = _display getVariable [QGVAR(title), ""];
     private _duration = _display getVariable [QGVAR(duration), CINEMA_BORDER_DEFAULT_DURATION];
 
-    [_title, _duration] call EFUNC(common,cinemaBorderGlobal);
+    [_title, _duration] call EFUNC(common,chapterTitleGlobal);
     deleteVehicle _logic;
 };
 
