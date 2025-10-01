@@ -17,7 +17,6 @@
 
 params ["_control"];
 private _display = ctrlParent _control;
-private _logic = missionNamespace getVariable ["BIS_fnc_initCuratorAttributes_target", objNull];
 
 _control ctrlRemoveAllEventHandlers "SetFocus";
 
