@@ -70,8 +70,7 @@ for "_" from 1 to _objectCount do {
     private _randomHeight = (_halfHeight + random (-_halfHeight - _halfHeight));
     _positionASL set [2, _baseHeight + _randomHeight];
 
-    // TODO: Testing, should be global event to send to clients
-    _object = createSimpleObject [selectRandomWeighted _debrisClasses, [0, 0, 0], true];
+    _object = createSimpleObject [selectRandomWeighted _debrisClasses, [0, 0, 0]];
     _object setPosASL _positionASL;
     _object setVectorDirAndUp [[] call CBA_fnc_randomVector3D, [] call CBA_fnc_randomVector3D];
 

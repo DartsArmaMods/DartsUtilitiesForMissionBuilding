@@ -80,9 +80,7 @@ switch (_mode) do {
     // Mission start
     case "init": {
         _input params ["", "_activated"];
-
-        if (!_activated) exitWith {};
-
+        if !(isServer && _activated) exitWith {};
         _logic call FUNC(moduleSpaceDebris_createFromSavedData);
     };
 };
