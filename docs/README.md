@@ -15,12 +15,11 @@
         <img src="https://img.shields.io/badge/License-APL ND-red?style=flat-square" alt="Dart's Utilities for Mission Building License">
     </a>
     <br>
-    <img src="https://img.shields.io/github/actions/workflow/status/DartsArmaMods/DartsUtilitiesForMissionBuilding/hemtt.yml?style=flat-square&label=HEMTT" alt="HEMTT">
-    <img src="https://img.shields.io/github/actions/workflow/status/DartsArmaMods/DartsUtilitiesForMissionBuilding/arma.yml?style=flat-square&label=Validate" alt="Validate">
+    <img src="https://img.shields.io/github/actions/workflow/status/DartsArmaMods/DartsUtilitiesForMissionBuilding/check.yml?style=flat-square&label=HEMTT" alt="HEMTT">
 </p>
 
 <p align="center">
-    <b>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA A3</a></b>
+    <b>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA</a> and <a href="https://github.com/acemod/ACE3/releases/latest">ACE3</a></b>
 </p>
 
 **Dart's Utilities for Mission Building** (DUMB) adds various modules for cooler missions.
