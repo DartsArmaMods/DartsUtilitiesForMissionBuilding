@@ -105,21 +105,29 @@ class CfgVehicles {
                 defaultValue = "''";
             };
 
-            class GVAR(drifting): Checkbox {
-                displayName = CSTRING(spaceDebris_AttributeDrifting_name);
-                tooltip = CSTRING(spaceDebris_AttributeDrifting_tooltip);
-                property = QGVAR(drifting);
-                defaultValue = "false";
-            };
+            // class GVAR(distribution): Combo {
+            //     displayName = ECSTRING(common,distribution_name);
+            //     tooltip = ECSTRING(common,distribution_tooltip);
+            //     property = QGVAR(distribution);
+            //     control = QGVAR(distribution);
+            //     defaultValue = "''";
+            // };
 
-            class GVAR(driftDirection): Edit {
-                displayName = CSTRING(spaceDebris_AttributeDriftDirection_name);
-                tooltip = CSTRING(spaceDebris_AttributeDriftDirection_tooltip);
-                property = QGVAR(driftDirection);
-                defaultValue = "0";
-                validate = "NUMBER";
-                control = "EditZ";
-            };
+            // class GVAR(drifting): Checkbox {
+            //     displayName = CSTRING(spaceDebris_AttributeDrifting_name);
+            //     tooltip = CSTRING(spaceDebris_AttributeDrifting_tooltip);
+            //     property = QGVAR(drifting);
+            //     defaultValue = "false";
+            // };
+
+            // class GVAR(driftDirection): Edit {
+            //     displayName = CSTRING(spaceDebris_AttributeDriftDirection_name);
+            //     tooltip = CSTRING(spaceDebris_AttributeDriftDirection_tooltip);
+            //     property = QGVAR(driftDirection);
+            //     defaultValue = "0";
+            //     validate = "NUMBER";
+            //     control = "EditZ";
+            // };
 
             class GVAR(debrisData): Edit {
                 displayName = CSTRING(spaceDebris_AttributeDebrisData_name);
