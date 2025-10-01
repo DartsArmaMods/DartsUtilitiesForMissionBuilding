@@ -31,6 +31,6 @@ private _order = [];
     _order pushBack _x;
     private _lbAdd = _ctrl lbAdd _displayName;
     _ctrl lbSetData [_lbAdd, _x];
-} forEach EGVAR(common,spaceDebrisPresets);
+} forEach lsb_common_spaceDebrisPresets;
 
 _ctrl lbSetCurSel (_order find "shipDebris");

@@ -18,3 +18,4 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 #include "RscTitles.hpp"
+#include "lsb_spaceDebrisPresets.hpp"

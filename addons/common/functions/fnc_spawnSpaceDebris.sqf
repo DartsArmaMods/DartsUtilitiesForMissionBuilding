@@ -7,7 +7,7 @@
  * 0: Area center <OBJECT|ARRAY>
  *    - Array must be format PositionASL
  * 1: Preset name <STRING>
- *    - Preset listed in dumb_common_spaceDebrisPresets
+ *    - Preset listed in lsb_common_spaceDebrisPresets
  * 2: Area Array <ARRAY>
  *    - 0: Length (A) <NUMBER>
  *    - 1: Width (B) <NUMBER>
@@ -56,7 +56,7 @@ private _baseHeight = if (_center isEqualType objNull) then {
     getPosASL _center select 2;
 } else { _center select 2 };
 
-private _debrisClasses = (GVAR(spaceDebrisPresets) getOrDefault [_preset, []]) select 1;
+private _debrisClasses = (lsb_common_spaceDebrisPresets getOrDefault [_preset, []]) select 1;
 if (_debrisClasses isEqualTo []) exitWith {
     WARNING_1("Preset '%1' has no defined debris classes",_preset);
 };
