@@ -4,5 +4,23 @@
         <Key ID="STR_dumb_common_displayName">
             <English>Common</English>
         </Key>
+        <Key ID="STR_dumb_common_spaceDebris">
+            <English>Space Debris</English>
+        </Key>
+        <Key ID="STR_dumb_common_spaceDebrisPreset_asteroids">
+            <English>Asteroids</English>
+        </Key>
+        <Key ID="STR_dumb_common_spaceDebrisPreset_asteroidsSmall">
+            <English>Small Asteroids</English>
+        </Key>
+        <Key ID="STR_dumb_common_spaceDebrisPreset_name">
+            <English>Debris Preset</English>
+        </Key>
+        <Key ID="STR_dumb_common_spaceDebrisPreset_shipDebris">
+            <English>Ship Debris</English>
+        </Key>
+        <Key ID="STR_dumb_common_spaceDebrisPreset_tooltip">
+            <English>Set what group of objects to use</English>
+        </Key>
     </Package>
 </Project>

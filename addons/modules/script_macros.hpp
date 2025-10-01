@@ -1,3 +1,6 @@
+#define MODULE(MODULE_NAME) DOUBLES(PREFIX,CONCAT(module,MODULE_NAME))
+#define QMODULE(MODULE_NAME) QUOTE(MODULE(MODULE_NAME))
+
 // For Zeus module UIs
 #define SIZEX ((safeZoneW / safeZoneH) min 1.2)
 #define SIZEY (SIZEX / 1.2)

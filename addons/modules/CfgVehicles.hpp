@@ -4,22 +4,23 @@ class CfgVehicles {
         class AttributesBase {
             class Edit;
             class Checkbox;
+            class Combo;
             class ModuleDescription;
         };
         class ModuleDescription;
     };
-    class GVAR(moduleBase): Module_F {
+    class MODULE(Base): Module_F {
         scope = 0;
         scopeCurator = 2;
         author = AUTHOR;
 
-        category = QGVAR(modules);
+        category = QUOTE(ADDON);
         isGlobal = 1;
         curatorCost = 1;
     };
 
     // Separate modules to avoid issues with Zeuses editing Eden-placed modules
-    class GVAR(moduleChapterTitle): GVAR(moduleBase) {
+    class MODULE(ChapterTitle): MODULE(Base) {
         scope = 2;
         scopeCurator = 0;
         author = AUTHOR;
@@ -68,10 +69,94 @@ class CfgVehicles {
         };
     };
 
-    class GVAR(moduleChapterTitle_zeus): GVAR(moduleBase) {
+    class MODULE(ChapterTitle_zeus): MODULE(Base) {
         scope = 1;
         author = AUTHOR;
         displayName = CSTRING(chapterTitle_name);
         curatorInfoType = QGVAR(RscChapterTitle);
+    };
+
+    class MODULE(SpaceDebris): MODULE(Base) {
+        scope = 2;
+        scopeCurator = 0;
+        author = AUTHOR;
+        displayName = ECSTRING(common,spaceDebris);
+
+        icon = "dumb_iconModuleSpaceDebris";
+
+        // JIP is handled in fnc_spawnSpaceDebris
+        is3DEN = 1;
+        function = QFUNC(moduleSpaceDebris);
+
+        class Attributes: AttributesBase {
+            class GVAR(count): Edit {
+                displayName = CSTRING(AttributeCount_name);
+                tooltip = CSTRING(spaceDebris_AttributeCount_tooltip);
+                property = QGVAR(count);
+                defaultValue = QUOTE(DEFAULT_OBJECT_COUNT);
+                validate = "NUMBER";
+            };
+
+            class GVAR(preset): Combo {
+                displayName = ECSTRING(common,spaceDebrisPreset_name);
+                tooltip = ECSTRING(common,spaceDebrisPreset_tooltip);
+                property = QGVAR(preset);
+                control = QGVAR(spaceDebrisPreset);
+                defaultValue = "''";
+            };
+
+            // class GVAR(distribution): Combo {
+            //     displayName = ECSTRING(common,distribution_name);
+            //     tooltip = ECSTRING(common,distribution_tooltip);
+            //     property = QGVAR(distribution);
+            //     control = QGVAR(distribution);
+            //     defaultValue = "''";
+            // };
+
+            // class GVAR(drifting): Checkbox {
+            //     displayName = CSTRING(spaceDebris_AttributeDrifting_name);
+            //     tooltip = CSTRING(spaceDebris_AttributeDrifting_tooltip);
+            //     property = QGVAR(drifting);
+            //     defaultValue = "false";
+            // };
+
+            // class GVAR(driftDirection): Edit {
+            //     displayName = CSTRING(spaceDebris_AttributeDriftDirection_name);
+            //     tooltip = CSTRING(spaceDebris_AttributeDriftDirection_tooltip);
+            //     property = QGVAR(driftDirection);
+            //     defaultValue = "0";
+            //     validate = "NUMBER";
+            //     control = "EditZ";
+            // };
+
+            class GVAR(debrisData): Edit {
+                displayName = CSTRING(spaceDebris_AttributeDebrisData_name);
+                tooltip = CSTRING(spaceDebris_AttributeDebrisData_tooltip);
+                property = QGVAR(debrisData);
+                defaultValue = "''";
+            };
+
+            class GVAR(paramsOld): Edit {
+                displayName = CSTRING(spaceDebris_AttributeParamsOld_name);
+                tooltip = CSTRING(spaceDebris_AttributeDebrisData_tooltip);
+                property = QGVAR(paramsOld);
+                defaultValue = "'[]'";
+            };
+
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        canSetArea = 1;
+        canSetAreaShape = 1;
+        canSetAreaHeight = 1;
+        class AttributeValues {
+            size3[] = {500, 500, 250};
+            isRectangle = 1;
+        };
+
+        class ModuleDescription: ModuleDescription {
+            direction = 1;
+            description = CSTRING(spaceDebris_description);
+        };
     };
 };

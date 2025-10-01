@@ -13,15 +13,18 @@ class CfgPatches {
             "ace_zeus"
         };
         units[] = {
-            QGVAR(moduleChapterTitle),
-            QGVAR(moduleChapterTitle_zeus)
+            QMODULE(ChapterTitle),
+            QMODULE(ChapterTitle_zeus),
+            QMODULE(SpaceDebris)
         };
         weapons[] = {};
         VERSION_CONFIG;
     };
 };
 
+#include "Cfg3DEN.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgVehicleIcons.hpp"
 #include "CfgFactionClasses.hpp"
 #include "CfgEventHandlers.hpp"
 #include "ui\controls.hpp"

@@ -6,6 +6,8 @@
 
 #define QQUOTE(var1) QUOTE(QUOTE(var1))
 
+#define CONCAT(var1,var2) var1##var2
+
 // QPATHTOF but without a leading slash
 #define PATHTOF2(var1) MAINPREFIX\PREFIX\SUBPREFIX\COMPONENT\var1
 #define QPATHTOF2(var1) QUOTE(PATHTOF2(var1))
