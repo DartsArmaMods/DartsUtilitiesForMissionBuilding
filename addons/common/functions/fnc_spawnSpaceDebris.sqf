@@ -64,6 +64,7 @@ if (_debrisClasses isEqualTo []) exitWith {
 private ["_positionASL", "_object"]; // Only create var once
 for "_" from 1 to _objectCount do {
     _positionASL = _area call BIS_fnc_randomPosTrigger; // Seemingly returns as PositionAGL, but we modify the height
+    _positionASL = [_positionASL, 0, 5, 5, 1, 0] call BIS_fnc_findSafePos;
 
     // Does not randomize height, so we do it manually
     private _randomHeight = (_halfHeight + random (-_halfHeight - _halfHeight));
