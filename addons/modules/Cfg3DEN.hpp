@@ -10,7 +10,6 @@ class Cfg3DEN {
                 class Value;
             };
         };
-
         class GVAR(spaceDebrisPreset): Combo {
             class Controls: Controls {
                 class Title: Title {};

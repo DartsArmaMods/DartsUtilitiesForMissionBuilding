@@ -27,7 +27,7 @@ private _debrisData = if (is3DEN) then {
 
 {
     _x params ["_class", "_positionASL", "_vectorDirAndUp"];
-    private _object = createSimpleObject [_class, [0, 0, 0], true]; // ! should be global event if !is3DEN
+    private _object = createSimpleObject [_class, [0, 0, 0]];
     _object setPosASL _positionASL;
     _object setVectorDirAndUp _vectorDirAndUp;
     _objects pushBack _object;
