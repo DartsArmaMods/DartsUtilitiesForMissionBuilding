@@ -3,7 +3,7 @@
 <h1 align="center">Dart's Utilities for Mission Building</h1>
 <p align="center">
     <a href="https://github.com/DartsArmaMods/DartsUtilitiesForMissionBuilding/releases/latest">
-        <img src="https://img.shields.io/badge/Version-1.0.2-blue?style=flat-square" alt="Dart's Utilities for Mission Building Version">
+        <img src="https://img.shields.io/badge/Version-1.0.3-blue?style=flat-square" alt="Dart's Utilities for Mission Building Version">
     </a>
     <a href="https://github.com/DartsArmaMods/DartsUtilitiesForMissionBuilding/issues">
         <img src="https://img.shields.io/github/issues-raw/DartsArmaMods/DartsUtilitiesForMissionBuilding.svg?style=flat-square&label=Issues" alt="Dart's Utilities for Mission Building Issues">
