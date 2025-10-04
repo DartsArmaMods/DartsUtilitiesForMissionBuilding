@@ -84,7 +84,6 @@ class CfgVehicles {
 
         icon = "dumb_iconModuleSpaceDebris";
 
-        // JIP is handled in fnc_spawnSpaceDebris
         is3DEN = 1;
         function = QFUNC(moduleSpaceDebris);
 
@@ -105,13 +104,13 @@ class CfgVehicles {
                 defaultValue = "''";
             };
 
-            // class GVAR(distribution): Combo {
-            //     displayName = ECSTRING(common,distribution_name);
-            //     tooltip = ECSTRING(common,distribution_tooltip);
-            //     property = QGVAR(distribution);
-            //     control = QGVAR(distribution);
-            //     defaultValue = "''";
-            // };
+            class GVAR(distribution): Combo {
+                displayName = ECSTRING(common,distribution_name);
+                tooltip = ECSTRING(common,distribution_tooltip);
+                property = QGVAR(distribution);
+                control = QGVAR(distribution);
+                defaultValue = "'randomArea'";
+            };
 
             // class GVAR(drifting): Checkbox {
             //     displayName = CSTRING(spaceDebris_AttributeDrifting_name);

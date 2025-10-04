@@ -18,5 +18,14 @@ class Cfg3DEN {
                 };
             };
         };
+
+        class GVAR(distribution): Combo {
+            class Controls: Controls {
+                class Title: Title {};
+                class Value: Value {
+                    onLoad = QUOTE(call (uiNamespace getVariable QQFUNC(3DEN_distributionOnLoad)));
+                };
+            };
+        };
     };
 };

@@ -32,17 +32,27 @@ _input params ["_logic"];
     private _return = (_logic get3DENAttribute "Size3") select 0;
     _return insert [2, [getDir _logic]];
     _return insert [3, _logic get3DENAttribute "IsRectangle"];
+
     private _preset = (_logic get3DENAttribute QGVAR(preset)) select 0;
     if (_preset == "") then {
         _preset = "shipDebris";
     };
-    _return pushBack _preset;
+
+    private _distribution = (_logic get3DENAttribute QGVAR(distribution)) select 0;
+    if (_distribution == "") then {
+        _distribution = "randomArea";
+    };
+
+    _return append [_preset, _distribution];
     _return;
 } else {
     private _return = _logic getVariable ["objectArea", [500, 500, getDir _logic, true, 250]];
-    _return pushBack (_logic getVariable [QGVAR(preset), "shipDebris"]);
+    _return append [
+        _logic getVariable [QGVAR(preset), "shipDebris"],
+        _logic getVariable [QGVAR(distribution), "randomArea"]
+    ];
     _return;
-}) params ["_a", "_b", "_direction", "_isRectangle", "_c", "_preset"];
+}) params ["_a", "_b", "_direction", "_isRectangle", "_c", "_preset", "_distribution"];
 
 private _objectCount = _logic getVariable [QGVAR(count), DEFAULT_OBJECT_COUNT];
 
@@ -50,15 +60,15 @@ private _fnc_deleteAndCreateObjects = {
     private _lastParams = (_logic get3DENAttribute QGVAR(paramsOld) select 0);
 
     // Only delete/create new objects if last params are empty or different from current
-    private _currentParams = str [getPosASL _logic, _preset, [_a, _b, _c, _direction, _isRectangle], _objectCount];
+    private _currentParams = str [getPosASL _logic, _preset, _distribution, [_a, _b, _c, _direction, _isRectangle], _objectCount];
     if (_lastParams == _currentParams) exitWith {
-        _logic call FUNC(moduleSpaceDebris_createFromSavedData);
+        _logic call FUNC(moduleSpaceDebris_createFromSavedData); // ? Not sure if required
     };
 
     _logic set3DENAttribute [QGVAR(paramsOld), _currentParams];
 
     deleteVehicle (_logic getVariable [QGVAR(debrisObjects), []]);
-    private _objects = [_logic, _preset, [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
+    private _objects = [_logic, _preset, _distribution, [_a, _b, _c, _direction, _isRectangle], _objectCount] call EFUNC(common,spawnSpaceDebris);
     _logic setVariable [QGVAR(debrisObjects), _objects];
     _logic set3DENAttribute [QGVAR(debrisData), str (_objects apply {
         [typeOf _x, getPosASL _x, [vectorDir _x, vectorUp _x]];
