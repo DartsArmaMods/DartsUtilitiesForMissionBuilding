@@ -76,7 +76,7 @@ if (_distributionFunction isEqualTo {}) exitWith {
 private ["_positionASL", "_object"]; // Only create vars once
 for "_" from 1 to _objectCount do {
     _positionASL = _area call _distributionFunction;
-    // _positionASL = [_positionASL, 0, 5, 5, 1, 0] call BIS_fnc_findSafePos;
+    _positionASL = [_positionASL, 0, 5, 5, 1, 0] call BIS_fnc_findSafePos;
 
     _object = createSimpleObject [selectRandomWeighted _debrisClasses, [0, 0, 0]];
     _object setPosASL _positionASL;
