@@ -61,9 +61,7 @@ private _fnc_deleteAndCreateObjects = {
 
     // Only delete/create new objects if last params are empty or different from current
     private _currentParams = str [getPosASL _logic, _preset, _distribution, [_a, _b, _c, _direction, _isRectangle], _objectCount];
-    if (_lastParams == _currentParams) exitWith {
-        _logic call FUNC(moduleSpaceDebris_createFromSavedData); // ? Not sure if required
-    };
+    if (_lastParams == _currentParams) exitWith {};
 
     _logic set3DENAttribute [QGVAR(paramsOld), _currentParams];
 
